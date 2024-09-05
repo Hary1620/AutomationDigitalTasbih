@@ -58,7 +58,7 @@ public class TasbihSteps {
     @And("ignore the device until the screen turns off")
     public void ignoreTheDeviceUntilTheScreenTurnsOff() throws InterruptedException {
             Thread.sleep(31000);
-            assertEquals(false, tasbih.isScreenOn());  //
+            assertEquals(false, tasbih.isScreenOn());
     }
 
     @When("I long press the count button {int} second")
