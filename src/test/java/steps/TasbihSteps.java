@@ -11,42 +11,42 @@ import static org.junit.Assert.assertTrue;
 
 public class TasbihSteps {
 
-   private Tasbih tasbih = new Tasbih();  // Buat instance Tasbih
+   private Tasbih tasbih = new Tasbih();
     private int initialCount;
     @Given("the tasbih is initialized")
     public void theTasbihIsInitialized() {
-        tasbih.initialize();  // Panggil method initialize dari class Tasbih
+        tasbih.initialize();
     }
 
     @When("I press the count button {int} times")
     public void iPressTheCountButtonTimes(int input) {
-        tasbih.pressCountButton(input);  // Panggil method pressCountButton dari class Tasbih
+        tasbih.pressCountButton(input);
     }
 
     @Then("the count should be {int}")
     public void theCountShouldBe(int expectedCount) {
-        assertEquals(expectedCount, tasbih.getCount());  // Validasi hitungan dengan method getCount
+        assertEquals(expectedCount, tasbih.getCount());
     }
 
     @When("I press the reset button")
     public void iPressTheResetButton() {
-        tasbih.pressResetButton();  // Panggil method reset dari class Tasbih
+        tasbih.pressResetButton();
     }
 
     @Then("the count should be reset to {int}")
     public void theCountShouldBeResetTo(int expectedCount) {
-        assertEquals(expectedCount, tasbih.getCount());  // Validasi hitungan yang di-reset
+        assertEquals(expectedCount, tasbih.getCount());
     }
 
     @When("I press the LED button")
     public void iPressTheLEDButton() {
-        tasbih.pressLEDButton();  // Panggil method pressLEDButton dari class Tasbih
+        tasbih.pressLEDButton();
     }
 
     @Then("the LED should be {string}")
     public void theLEDShouldBe(String expectedStatus) {
         boolean expectedLedOn = expectedStatus.equalsIgnoreCase("on");
-        assertEquals(expectedLedOn, tasbih.isLEDOn());  // Validasi status LED dengan method isLEDOn
+        assertEquals(expectedLedOn, tasbih.isLEDOn());
     }
 
     @Then("the screen display of the count result is {int}")
@@ -57,7 +57,7 @@ public class TasbihSteps {
 
     @And("ignore the device until the screen turns off")
     public void ignoreTheDeviceUntilTheScreenTurnsOff() throws InterruptedException {
-            Thread.sleep(31000); // Tunggu sedikit lebih dari 30 detik untuk memastikan layar mati
+            Thread.sleep(31000);
             assertEquals(false, tasbih.isScreenOn());  //
     }
 
