@@ -102,4 +102,14 @@ public class TasbihSteps {
     public void iLongPressTheResetButtonSecond(int seconds) {
         tasbih.longPressResetButton(seconds);
     }
+
+    @When("I press the reset button and Count button at same times")
+    public void iPressTheResetButtonAndCountButtonAtSameTimes() {
+        tasbih.pressResetAndCountButtonsSimultaneously();
+    }
+
+    @When("I press the reset button and LED button at same times")
+    public void iPressTheResetButtonAndLEDButtonAtSameTimes() {
+        tasbih.pressResetAndLEDButtonsSimultaneously();
+    }
 }

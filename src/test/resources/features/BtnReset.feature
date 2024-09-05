@@ -37,3 +37,11 @@ Feature: Validate reset button work correctly
             Then The count reset to 0
 
             Scenario: Press Reset Button and Count Button at same times
+              Given the tasbih is initialized
+              When I press the reset button and Count button at same times
+              Then device doesn't respond
+
+              Scenario: Press Reset Button and LED Button at same times
+                Given the tasbih is initialized
+                When I press the reset button and LED button at same times
+                Then device doesn't respond
