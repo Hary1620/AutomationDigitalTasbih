@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "steps",
-        plugin = {"pretty", "html:target/cucumber-reports"},
-        tags = "@reset"
+        plugin = {"pretty", "html:target/cucumber-reports"}
+//        , tags = "@reset"
 )
 public class RunCucumberTest {
 }

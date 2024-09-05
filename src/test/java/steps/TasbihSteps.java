@@ -112,4 +112,19 @@ public class TasbihSteps {
     public void iPressTheResetButtonAndLEDButtonAtSameTimes() {
         tasbih.pressResetAndLEDButtonsSimultaneously();
     }
+
+    @Then("Wait until LED ligh is turn off")
+    public void waitUntilLEDLighIsTurnOff() {
+        tasbih.waitUntilLEDLightIsTurnedOff();
+    }
+
+    @When("I press the LED button and Count button at same times")
+    public void iPressTheLEDButtonAndCountButtonAtSameTimes() {
+        tasbih.pressLEDAndCountButtonsSimultaneously();
+    }
+
+    @When("I press the LED button and Reset button at same times")
+    public void iPressTheLEDButtonAndResetButtonAtSameTimes() {
+        tasbih.pressLEDAndResetButtonsSimultaneously();
+    }
 }

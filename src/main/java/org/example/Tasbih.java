@@ -102,12 +102,32 @@ public class Tasbih {
         public void pressLEDButton() {
             ledOn = !ledOn;  // Ubah status LED
             System.out.println("LED button pressed. LED is now " + (ledOn ? "on" : "off"));
+            TimerTask turnOffLedTask = new TimerTask() {
+                @Override
+                public void run() {
+                    ledOn = false;  // Matikan LED
+                    System.out.println("LED has been turned off after 20 seconds.");
+                }
+            };
+            timer.schedule(turnOffLedTask, 20000); // Tunggu 20 detik (20000 milidetik) sebelum mematikan LED
+
         }
 
         // Mendapatkan status LED
         public boolean isLEDOn() {
             return ledOn;
         }
+
+    public void waitUntilLEDLightIsTurnedOff() {
+        // Periksa status LED setiap detik sampai LED dimatikan
+        while (ledOn) {
+            try {
+                Thread.sleep(1000); // Tunggu 1 detik sebelum memeriksa lagi
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     public boolean isScreenOn() {
         return screenOn;
